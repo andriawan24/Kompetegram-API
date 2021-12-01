@@ -7,6 +7,12 @@ const init = (server) => {
     })
 
     server.use('/api', apiRoute)
+    server.use((req, res, next) => {
+        res.status(404).send({
+            'status': 'error',
+            'message': 'Page not found'
+        })
+    })
 }
 
 module.exports = {
