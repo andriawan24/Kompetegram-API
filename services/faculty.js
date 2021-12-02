@@ -117,16 +117,16 @@ const getDetailProdiFakultas = async (req, res, next) => {
 
         if (faculties.length == 0) {
             return res.status(200).json({
-                'status': 'error',
-                'message': 'Page not found'
+                "errors": {
+                    'status': '404',
+                    'title': 'Tidak ditemukan',
+                    'message': 'Prodi dari fakultas bersangkutan tidak ditemukan'
+                }
             })
         }
 
         return res.status(200).json({
-            'data': {
-                "universitas": "Universitas Pendidikan Indonesia",
-                "list_fakultas": faculties
-            }
+            'data': faculties[0]
         })
     } catch (error) {
         return res.status(500).json({
@@ -204,10 +204,20 @@ const getDetailProdi = async (req, res, next) => {
                 }
             }
         ]
-        let fakultas = await Faculty.aggregate(agg)
+        let prodi = await Faculty.aggregate(agg)
+
+        if (prodi.length == 0) {
+            return res.status(200).json({
+                "errors": {
+                    'status': '404',
+                    'title': 'Tidak ditemukan',
+                    'message': 'Prodi tidak ditemukan'
+                }
+            })
+        }
 
         return res.status(200).json({
-            'data': fakultas
+            'data': prodi[0]
         })
     } catch (error) {
         return res.status(500).json({

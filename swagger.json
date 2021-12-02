@@ -1,0 +1,948 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "",
+        "version": "1.0.0",
+        "title": "API Kompetegram",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "kompetegram@upi.edu"
+        }
+    },
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "host": "localhost:3000",
+    "basePath": "/api/v1",
+    "tags": [
+        {
+            "name": "Fakultas",
+            "description": "Menampilkan data fakultas UPI",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://swagger.io"
+            }
+        },
+        {
+            "name": "Prodi",
+            "description": "Menampilkan data prodi UPI"
+        }
+    ],
+    "schemes": [
+        "https",
+        "http"
+    ],
+    "paths": {
+        "/fakultas": {
+          "get": {
+            "tags": [
+                "Fakultas"
+            ],
+            "operationId": "getFakultas",
+            "summary": "",
+            "description": "Mendapatkan list fakultas",
+            "produces": [
+              "application/json"
+            ],
+            "responses": {
+              "200": {
+                "description": "200 response",
+                "examples": {
+                  "application/json": {
+                      "data": [
+                        {
+                            "nama_fakultas": "FIP"
+                        },
+                        {
+                            "nama_fakultas": "FPBS"
+                        },
+                        {
+                            "nama_fakultas": "FPEB"
+                        },
+                        {
+                            "nama_fakultas": "FPIPS"
+                        }
+                      ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/fakultas-prodi": {
+            "get": {
+              "tags": [
+                  "Fakultas"
+              ],
+              "operationId": "getFakultasProdi",
+              "summary": "",
+              "description": "Mendapatkan list fakultas beserta prodinya",
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "200 response",
+                  "examples": {
+                      "application/json": {
+                        "data": {
+                            "universitas": "Universitas Pendidikan Indonesia",
+                            "list_fakultas": [
+                                {
+                                    "nama_fakultas": "FIP",
+                                    "list_prodi": [
+                                        {
+                                            "kode_prodi": "A015",
+                                            "nama_prodi": "Administrasi Pendidikan"
+                                        },
+                                        {
+                                            "kode_prodi": "A025",
+                                            "nama_prodi": "Bimbingan dan Konseling"
+                                        },
+                                        {
+                                            "kode_prodi": "A035",
+                                            "nama_prodi": "Pendidikan Masyarakat"
+                                        },
+                                        {
+                                            "kode_prodi": "A045",
+                                            "nama_prodi": "Pendidikan Khusus"
+                                        },
+                                        {
+                                            "kode_prodi": "A055",
+                                            "nama_prodi": "Teknologi Pendidikan"
+                                        },
+                                        {
+                                            "kode_prodi": "A065",
+                                            "nama_prodi": "Pendidikan Guru Sekolah Dasar"
+                                        },
+                                        {
+                                            "kode_prodi": "A075",
+                                            "nama_prodi": "Pendidikan Guru Pendidikan Anak Usia Dini"
+                                        },
+                                        {
+                                            "kode_prodi": "A085",
+                                            "nama_prodi": "Perpustakaan dan Sains Informasi"
+                                        },
+                                        {
+                                            "kode_prodi": "A505",
+                                            "nama_prodi": "Psikologi"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "nama_fakultas": "FPBS",
+                                    "list_prodi": [
+                                        {
+                                            "kode_prodi": "C015",
+                                            "nama_prodi": "Pendidikan Bahasa dan Sastra Indonesia"
+                                        },
+                                        {
+                                            "kode_prodi": "C025",
+                                            "nama_prodi": "Pendidikan Bahasa Sunda"
+                                        },
+                                        {
+                                            "kode_prodi": "C035",
+                                            "nama_prodi": "Pendidikan Bahasa Inggris"
+                                        },
+                                        {
+                                            "kode_prodi": "C045",
+                                            "nama_prodi": "Pendidikan Bahasa Arab"
+                                        },
+                                        {
+                                            "kode_prodi": "C055",
+                                            "nama_prodi": "Pendidikan Bahasa Jepang"
+                                        },
+                                        {
+                                            "kode_prodi": "C065",
+                                            "nama_prodi": "Pendidikan Bahasa Jerman"
+                                        },
+                                        {
+                                            "kode_prodi": "C075",
+                                            "nama_prodi": "Pendidikan Bahasa Perancis"
+                                        },
+                                        {
+                                            "kode_prodi": "C115",
+                                            "nama_prodi": "Pendidikan Bahasa Korea"
+                                        },
+                                        {
+                                            "kode_prodi": "C505",
+                                            "nama_prodi": "Bahasa dan Sastra Inggris"
+                                        },
+                                        {
+                                            "kode_prodi": "C515",
+                                            "nama_prodi": "Bahasa dan Sastra Indonesia"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "nama_fakultas": "FPEB",
+                                    "list_prodi": [
+                                        {
+                                            "kode_prodi": "L015",
+                                            "nama_prodi": "Pendidikan Akuntansi"
+                                        },
+                                        {
+                                            "kode_prodi": "L025",
+                                            "nama_prodi": "Pendidikan Bisnis"
+                                        },
+                                        {
+                                            "kode_prodi": "L035",
+                                            "nama_prodi": "Pendidikan Manajemen Perkantoran"
+                                        },
+                                        {
+                                            "kode_prodi": "L045",
+                                            "nama_prodi": "Pendidikan Ekonomi"
+                                        },
+                                        {
+                                            "kode_prodi": "L505",
+                                            "nama_prodi": "Manajemen"
+                                        },
+                                        {
+                                            "kode_prodi": "L515",
+                                            "nama_prodi": "Akuntansi"
+                                        },
+                                        {
+                                            "kode_prodi": "L525",
+                                            "nama_prodi": "Ilmu Ekonomi dan Keuangan Islam"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                      }
+                  }
+                }
+              }
+            }
+        },
+        "/{nama_fakultas}/prodi": {
+            "get": {
+              "tags": [
+                  "Fakultas"
+              ],
+              "operationId": "getDetailFakultas",
+              "summary": "",
+              "description": "Mendapatkan list prodi berdasarkan fakultas",
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                  {
+                    "name": "nama_fakultas",
+                    "in": "path",
+                    "description": "Nama Fakultas",
+                    "required": true
+                  }
+              ],
+              "responses": {
+                "200": {
+                  "description": "200 response",
+                  "examples": {
+                      "application/json": {
+                        "data": {
+                            "nama_fakultas": "FPMIPA",
+                            "list_prodi": [
+                                {
+                                    "kode_prodi": "D015",
+                                    "nama_prodi": "Pendidikan Matematika"
+                                },
+                                {
+                                    "kode_prodi": "D025",
+                                    "nama_prodi": "Pendidikan Fisika"
+                                },
+                                {
+                                    "kode_prodi": "D035",
+                                    "nama_prodi": "Pendidikan Biologi"
+                                },
+                                {
+                                    "kode_prodi": "D045",
+                                    "nama_prodi": "Pendidikan Kimia"
+                                },
+                                {
+                                    "kode_prodi": "D055",
+                                    "nama_prodi": "Pendidikan Ilmu Komputer"
+                                },
+                                {
+                                    "kode_prodi": "D405",
+                                    "nama_prodi": "Pendidikan IPA Internasional (IPSE)"
+                                },
+                                {
+                                    "kode_prodi": "D505",
+                                    "nama_prodi": "Matematika"
+                                },
+                                {
+                                    "kode_prodi": "D515",
+                                    "nama_prodi": "Fisika"
+                                },
+                                {
+                                    "kode_prodi": "D525",
+                                    "nama_prodi": "Biologi"
+                                },
+                                {
+                                    "kode_prodi": "D535",
+                                    "nama_prodi": "Kimia"
+                                },
+                                {
+                                    "kode_prodi": "D545",
+                                    "nama_prodi": "Ilmu Komputer"
+                                }
+                            ]
+                        }
+                      }
+                  }
+                },
+                "404": {
+                  "description": "404 response",
+                  "examples": {
+                      "application/json": {
+                        "errors": {
+                            "status": "404",
+                            "title": "Tidak ditemukan",
+                            "message": "Prodi dari fakultas bersangkutan tidak ditemukan"
+                        }
+                      }
+                  }
+                }
+              }
+            }
+        },
+        "/prodi": {
+            "get": {
+              "tags": [
+                  "Prodi"
+              ],
+              "operationId": "getProdi",
+              "summary": "",
+              "description": "Mendapatkan list prodi",
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "200 response",
+                  "examples": {
+                    "application/json": {
+                        "data": [
+                            {
+                                "kode": "A015",
+                                "prodi": "Administrasi Pendidikan"
+                            },
+                            {
+                                "kode": "L515",
+                                "prodi": "Akuntansi"
+                            },
+                            {
+                                "kode": "E515",
+                                "prodi": "Arsitektur"
+                            },
+                            {
+                                "kode": "C515",
+                                "prodi": "Bahasa dan Sastra Indonesia"
+                            },
+                            {
+                                "kode": "C505",
+                                "prodi": "Bahasa dan Sastra Inggris"
+                            },
+                            {
+                                "kode": "A025",
+                                "prodi": "Bimbingan dan Konseling"
+                            },
+                            {
+                                "kode": "D525",
+                                "prodi": "Biologi"
+                            },
+                            {
+                                "kode": "J515",
+                                "prodi": "Bisnis Digital"
+                            },
+                            {
+                                "kode": "M505",
+                                "prodi": "Desain Komunikasi Visual"
+                            },
+                            {
+                                "kode": "J525",
+                                "prodi": "Desain Produk Industri"
+                            },
+                            {
+                                "kode": "N038",
+                                "prodi": "Doktor Administrasi Pendidikan"
+                            },
+                            {
+                                "kode": "N034",
+                                "prodi": "Doktor Linguistik"
+                            },
+                            {
+                                "kode": "N033",
+                                "prodi": "Doktor Manajemen"
+                            },
+                            {
+                                "kode": "N041",
+                                "prodi": "Doktor Pendidikan Bahasa Indonesia"
+                            },
+                            {
+                                "kode": "N032",
+                                "prodi": "Doktor Pendidikan Dasar"
+                            },
+                            {
+                                "kode": "N031",
+                                "prodi": "Doktor Pendidikan Ekonomi"
+                            },
+                            {
+                                "kode": "N027",
+                                "prodi": "Doktor Pendidikan Geografi"
+                            },
+                            {
+                                "kode": "N036",
+                                "prodi": "Doktor Pendidikan Ilmu Pengetahuan Alam"
+                            },
+                            {
+                                "kode": "N037",
+                                "prodi": "Doktor Pendidikan Ilmu Pengetahuan Sosial"
+                            },
+                            {
+                                "kode": "N030",
+                                "prodi": "Doktor Pendidikan Khusus"
+                            },
+                            {
+                                "kode": "N040",
+                                "prodi": "Doktor Pendidikan Olahraga"
+                            },
+                            {
+                                "kode": "N028",
+                                "prodi": "Doktor Pendidikan Sejarah"
+                            },
+                            {
+                                "kode": "N029",
+                                "prodi": "Doktor Pendidikan Seni"
+                            },
+                            {
+                                "kode": "N039",
+                                "prodi": "Doktor Pendidikan Teknik dan Kejuruan"
+                            },
+                            {
+                                "kode": "N035",
+                                "prodi": "Doktor Pendidikan Umum dan Karakter"
+                            },
+                            {
+                                "kode": "N042",
+                                "prodi": "Doktor Pengembangan Kurikulum"
+                            },
+                            {
+                                "kode": "M515",
+                                "prodi": "Film dan Televisi"
+                            },
+                            {
+                                "kode": "D515",
+                                "prodi": "Fisika"
+                            },
+                            {
+                                "kode": "F535",
+                                "prodi": "Gizi"
+                            },
+                            {
+                                "kode": "L525",
+                                "prodi": "Ilmu Ekonomi dan Keuangan Islam"
+                            },
+                            {
+                                "kode": "F505",
+                                "prodi": "Ilmu Keolahragaan"
+                            },
+                            {
+                                "kode": "D545",
+                                "prodi": "Ilmu Komputer"
+                            },
+                            {
+                                "kode": "B565",
+                                "prodi": "Ilmu Komunikasi"
+                            },
+                            {
+                                "kode": "B085",
+                                "prodi": "Ilmu Pendidikan Agama Islam"
+                            },
+                            {
+                                "kode": "H525",
+                                "prodi": "Industri Pariwisata"
+                            },
+                            {
+                                "kode": "H515",
+                                "prodi": "Keperawatan"
+                            },
+                            {
+                                "kode": "J505",
+                                "prodi": "Kewirausahaan"
+                            },
+                            {
+                                "kode": "D535",
+                                "prodi": "Kimia"
+                            },
+                            {
+                                "kode": "K515",
+                                "prodi": "Logistik Kelautan"
+                            },
+                            {
+                                "kode": "N019",
+                                "prodi": "Magister Administrasi Pendidikan"
+                            },
+                            {
+                                "kode": "N004",
+                                "prodi": "Magister Akuntansi"
+                            },
+                            {
+                                "kode": "N012",
+                                "prodi": "Magister Ekonomi"
+                            },
+                            {
+                                "kode": "N006",
+                                "prodi": "Magister Linguistik"
+                            },
+                            {
+                                "kode": "N007",
+                                "prodi": "Magister Manajemen"
+                            },
+                            {
+                                "kode": "N002",
+                                "prodi": "Magister Manajemen Perkantoran"
+                            },
+                            {
+                                "kode": "N003",
+                                "prodi": "Magister Pariwisata"
+                            },
+                            {
+                                "kode": "N017",
+                                "prodi": "Magister Pendidikan Anak Usia Dini"
+                            },
+                            {
+                                "kode": "N026",
+                                "prodi": "Magister Pendidikan Bahasa Arab"
+                            },
+                            {
+                                "kode": "N025",
+                                "prodi": "Magister Pendidikan Bahasa Indonesia"
+                            },
+                            {
+                                "kode": "N024",
+                                "prodi": "Magister Pendidikan Bahasa Jepang"
+                            },
+                            {
+                                "kode": "N020",
+                                "prodi": "Magister Pendidikan Bahasa dan Budaya Sunda"
+                            },
+                            {
+                                "kode": "N010",
+                                "prodi": "Magister Pendidikan Dasar"
+                            },
+                            {
+                                "kode": "N011",
+                                "prodi": "Magister Pendidikan Ekonomi"
+                            },
+                            {
+                                "kode": "N009",
+                                "prodi": "Magister Pendidikan Geografi"
+                            },
+                            {
+                                "kode": "N001",
+                                "prodi": "Magister Pendidikan Ilmu Komputer"
+                            },
+                            {
+                                "kode": "N022",
+                                "prodi": "Magister Pendidikan Ilmu Pengetahuan Alam"
+                            },
+                            {
+                                "kode": "N005",
+                                "prodi": "Magister Pendidikan Ilmu Pengetahuan Sosial"
+                            },
+                            {
+                                "kode": "N015",
+                                "prodi": "Magister Pendidikan Khusus"
+                            },
+                            {
+                                "kode": "N021",
+                                "prodi": "Magister Pendidikan Olahraga"
+                            },
+                            {
+                                "kode": "N008",
+                                "prodi": "Magister Pendidikan Sejarah"
+                            },
+                            {
+                                "kode": "N013",
+                                "prodi": "Magister Pendidikan Seni"
+                            },
+                            {
+                                "kode": "N014",
+                                "prodi": "Magister Pendidikan Teknologi Kejuruan"
+                            },
+                            {
+                                "kode": "N016",
+                                "prodi": "Magister Pendidikan Umum dan Karakter"
+                            },
+                            {
+                                "kode": "N018",
+                                "prodi": "Magister Pengembangan Kurikulum"
+                            },
+                            {
+                                "kode": "N023",
+                                "prodi": "Magister Psikologi Pendidikan"
+                            },
+                            {
+                                "kode": "L505",
+                                "prodi": "Manajemen"
+                            },
+                            {
+                                "kode": "B545",
+                                "prodi": "Manajemen Industri Katering"
+                            },
+                            {
+                                "kode": "B535",
+                                "prodi": "Manajemen Pemasaran Parawisata"
+                            },
+                            {
+                                "kode": "B525",
+                                "prodi": "Manajemen Resort dan Leisure"
+                            },
+                            {
+                                "kode": "D505",
+                                "prodi": "Matematika"
+                            },
+                            {
+                                "kode": "I515",
+                                "prodi": "Mekatronika dan Kecerdasan Buatan"
+                            },
+                            {
+                                "kode": "M525",
+                                "prodi": "Musik"
+                            },
+                            {
+                                "kode": "F525",
+                                "prodi": "Pelatihan Fisik Olahraga"
+                            },
+                            {
+                                "kode": "L015",
+                                "prodi": "Pendidikan Akuntansi"
+                            },
+                            {
+                                "kode": "C045",
+                                "prodi": "Pendidikan Bahasa Arab"
+                            },
+                            {
+                                "kode": "C035",
+                                "prodi": "Pendidikan Bahasa Inggris"
+                            },
+                            {
+                                "kode": "C055",
+                                "prodi": "Pendidikan Bahasa Jepang"
+                            },
+                            {
+                                "kode": "C065",
+                                "prodi": "Pendidikan Bahasa Jerman"
+                            },
+                            {
+                                "kode": "C115",
+                                "prodi": "Pendidikan Bahasa Korea"
+                            },
+                            {
+                                "kode": "C075",
+                                "prodi": "Pendidikan Bahasa Perancis"
+                            },
+                            {
+                                "kode": "C025",
+                                "prodi": "Pendidikan Bahasa Sunda"
+                            },
+                            {
+                                "kode": "C015",
+                                "prodi": "Pendidikan Bahasa dan Sastra Indonesia"
+                            },
+                            {
+                                "kode": "D035",
+                                "prodi": "Pendidikan Biologi"
+                            },
+                            {
+                                "kode": "L025",
+                                "prodi": "Pendidikan Bisnis"
+                            },
+                            {
+                                "kode": "L045",
+                                "prodi": "Pendidikan Ekonomi"
+                            },
+                            {
+                                "kode": "D025",
+                                "prodi": "Pendidikan Fisika"
+                            },
+                            {
+                                "kode": "B035",
+                                "prodi": "Pendidikan Geografi"
+                            },
+                            {
+                                "kode": "J075",
+                                "prodi": "Pendidikan Guru Pendidikan Anak Usia Dini"
+                            },
+                            {
+                                "kode": "K075",
+                                "prodi": "Pendidikan Guru Pendidikan Anak Usia Dini"
+                            },
+                            {
+                                "kode": "I075",
+                                "prodi": "Pendidikan Guru Pendidikan Anak Usia Dini"
+                            },
+                            {
+                                "kode": "G075",
+                                "prodi": "Pendidikan Guru Pendidikan Anak Usia Dini"
+                            },
+                            {
+                                "kode": "A075",
+                                "prodi": "Pendidikan Guru Pendidikan Anak Usia Dini"
+                            },
+                            {
+                                "kode": "I065",
+                                "prodi": "Pendidikan Guru Sekolah Dasar"
+                            },
+                            {
+                                "kode": "G065",
+                                "prodi": "Pendidikan Guru Sekolah Dasar"
+                            },
+                            {
+                                "kode": "J065",
+                                "prodi": "Pendidikan Guru Sekolah Dasar"
+                            },
+                            {
+                                "kode": "K065",
+                                "prodi": "Pendidikan Guru Sekolah Dasar"
+                            },
+                            {
+                                "kode": "A065",
+                                "prodi": "Pendidikan Guru Sekolah Dasar"
+                            },
+                            {
+                                "kode": "H065",
+                                "prodi": "Pendidikan Guru Sekolah Dasar"
+                            },
+                            {
+                                "kode": "H085",
+                                "prodi": "Pendidikan Guru Sekolah Dasar Pendidikan Jasmani"
+                            },
+                            {
+                                "kode": "F085",
+                                "prodi": "Pendidikan Guru Sekolah Dasar Pendidikan Jasmani"
+                            },
+                            {
+                                "kode": "D405",
+                                "prodi": "Pendidikan IPA Internasional (IPSE)"
+                            },
+                            {
+                                "kode": "D055",
+                                "prodi": "Pendidikan Ilmu Komputer"
+                            },
+                            {
+                                "kode": "B095",
+                                "prodi": "Pendidikan Ilmu Pengetahuan Sosial"
+                            },
+                            {
+                                "kode": "F025",
+                                "prodi": "Pendidikan Jasmani Kesehatan dan Rekreasi"
+                            },
+                            {
+                                "kode": "K095",
+                                "prodi": "Pendidikan Kelautan dan Perikanan"
+                            },
+                            {
+                                "kode": "F015",
+                                "prodi": "Pendidikan Kepelatihan Olahraga"
+                            },
+                            {
+                                "kode": "E065",
+                                "prodi": "Pendidikan Kesejahteraan Keluarga"
+                            },
+                            {
+                                "kode": "B015",
+                                "prodi": "Pendidikan Kewarganegaraan"
+                            },
+                            {
+                                "kode": "A045",
+                                "prodi": "Pendidikan Khusus"
+                            },
+                            {
+                                "kode": "D045",
+                                "prodi": "Pendidikan Kimia"
+                            },
+                            {
+                                "kode": "L035",
+                                "prodi": "Pendidikan Manajemen Perkantoran"
+                            },
+                            {
+                                "kode": "A035",
+                                "prodi": "Pendidikan Masyarakat"
+                            },
+                            {
+                                "kode": "D015",
+                                "prodi": "Pendidikan Matematika"
+                            },
+                            {
+                                "kode": "G095",
+                                "prodi": "Pendidikan Multimedia"
+                            },
+                            {
+                                "kode": "B115",
+                                "prodi": "Pendidikan Parawisata"
+                            },
+                            {
+                                "kode": "B025",
+                                "prodi": "Pendidikan Sejarah"
+                            },
+                            {
+                                "kode": "M035",
+                                "prodi": "Pendidikan Seni Musik"
+                            },
+                            {
+                                "kode": "M015",
+                                "prodi": "Pendidikan Seni Rupa"
+                            },
+                            {
+                                "kode": "M025",
+                                "prodi": "Pendidikan Seni Tari"
+                            },
+                            {
+                                "kode": "I095",
+                                "prodi": "Pendidikan Sistem dan Teknologi Informasi"
+                            },
+                            {
+                                "kode": "B105",
+                                "prodi": "Pendidikan Sosiologi"
+                            },
+                            {
+                                "kode": "E075",
+                                "prodi": "Pendidikan Tata Boga"
+                            },
+                            {
+                                "kode": "E085",
+                                "prodi": "Pendidikan Tata Busana"
+                            },
+                            {
+                                "kode": "E015",
+                                "prodi": "Pendidikan Teknik Arsitektur"
+                            },
+                            {
+                                "kode": "E025",
+                                "prodi": "Pendidikan Teknik Bangunan"
+                            },
+                            {
+                                "kode": "E045",
+                                "prodi": "Pendidikan Teknik Elektro"
+                            },
+                            {
+                                "kode": "E055",
+                                "prodi": "Pendidikan Teknik Mesin"
+                            },
+                            {
+                                "kode": "E115",
+                                "prodi": "Pendidikan Teknik Otomasi Industri dan Robotika"
+                            },
+                            {
+                                "kode": "E105",
+                                "prodi": "Pendidikan Teknik Otomatif"
+                            },
+                            {
+                                "kode": "E095",
+                                "prodi": "Pendidikan Teknologi Agroindustri"
+                            },
+                            {
+                                "kode": "A085",
+                                "prodi": "Perpustakaan dan Sains Informasi"
+                            },
+                            {
+                                "kode": "A505",
+                                "prodi": "Psikologi"
+                            },
+                            {
+                                "kode": "G505",
+                                "prodi": "Rekayasa Perangkat Lunak"
+                            },
+                            {
+                                "kode": "B555",
+                                "prodi": "Sains Informasi Geografis"
+                            },
+                            {
+                                "kode": "K505",
+                                "prodi": "Sistem Informasi Kelautan"
+                            },
+                            {
+                                "kode": "I505",
+                                "prodi": "Sistem Telekomunikasi"
+                            },
+                            {
+                                "kode": "E505",
+                                "prodi": "Teknik Elektro"
+                            },
+                            {
+                                "kode": "G515",
+                                "prodi": "Teknik Komputer"
+                            },
+                            {
+                                "kode": "E555",
+                                "prodi": "Teknik Logistik"
+                            },
+                            {
+                                "kode": "E545",
+                                "prodi": "Teknik Sipil"
+                            },
+                            {
+                                "kode": "A055",
+                                "prodi": "Teknologi Pendidikan"
+                            }
+                        ]
+                    }
+                  }
+                }
+              }
+            }
+        },
+        "/{kode_prodi}": {
+            "get": {
+                "tags": [
+                    "Prodi"
+                ],
+                "operationId": "getProdi",
+                "summary": "",
+                "description": "Mendapatkan detail dari program studi secara spesifik",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "kode_prodi",
+                        "in": "path",
+                        "description": "Kode Prodi",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                        "application/json": {
+                            "data": {
+                                "kode": "J505",
+                                "prodi": "Kewirausahaan",
+                                "nama_fakultas": "Kampus UPI Tasikmalaya"
+                            }
+                        }
+                        }
+                    },
+                    "404": {
+                        "description": "404 response",
+                        "examples": {
+                            "application/json": {
+                            "errors": {
+                                "status": "404",
+                                "title": "Tidak ditemukan",
+                                "message": "Prodi dari fakultas bersangkutan tidak ditemukan"
+                            }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

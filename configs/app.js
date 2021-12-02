@@ -4,6 +4,11 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 dotenv.config()
 
+const swaggerUi = require('swagger-ui-express')
+const swaggerDocument = require('../swagger.json')
+const { setRandomFallback } = require('bcryptjs')
+const swaggerOptions = 
+
 module.exports = () => {
     let server = express(), create, start
 
@@ -19,6 +24,8 @@ module.exports = () => {
         server.use(bodyParser.urlencoded({
             extended: false
         }))
+
+        server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, swaggerOptions))
 
         mongoose.connect(
             `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.od9px.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`,
